@@ -18,7 +18,6 @@ export default function Footer() {
                   <li className="text_color_secondary font-weight-bold">Navigation</li>
                   <li><a href="https://www.polyient.games/" target="_blank">Home</a></li>
                   <li><a href="https://www.polyient.games/#faqs" target="_blank">FAQs</a></li>
-                  <li><a href="https://www.polyient.games/dashboard" target="_blank">Key Sale</a></li>
                   <li><a href="https://www.polyient.games/#technical_partners" target="_blank">Partners</a></li>
                 </ul>
               </div>
