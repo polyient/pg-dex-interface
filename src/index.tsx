@@ -23,6 +23,10 @@ if ('ethereum' in window) {
   ;(window.ethereum as any).autoRefreshOnNetworkChange = false
 }
 
+if (process.env.NODE_ENV =="production" && window.location.protocol !== 'https:') {
+  window.location.replace(`https:${window.location.href.substring(window.location.protocol.length)}`);
+}
+
 const GOOGLE_ANALYTICS_ID: string | undefined = process.env.REACT_APP_GOOGLE_ANALYTICS_ID
 if (typeof GOOGLE_ANALYTICS_ID === 'string') {
   ReactGA.initialize(GOOGLE_ANALYTICS_ID)
