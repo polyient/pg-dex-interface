@@ -91,7 +91,7 @@ export function PairLiquidity() {
   setEthPgt(view_data.eth.pgt.toFixed(4));
   setEthUsd(`$${view_data.eth.usd.toFixed(4)}`);
   }
-  interval = setInterval(fn,20000);
+  interval = setInterval(fn,40000);
   fn();
   return (
     <div> 
