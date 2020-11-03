@@ -103,14 +103,14 @@ export function PairLiquidity() {
             <h1>${totalPrice} </h1>
           </div>
           <div className="col-lg-6">
-            <label className="text-dex-dark">Current Price</label>
+            <label className="text-dex-dark">Last Price</label>
             <p className="text-white">
               1 PGT ={pgtEth} ETH ({pgtUsd})<br/>
               1 ETH = {ethPgt} PGT ({ethUsd})
             </p>
           </div>
           <div className="col-lg-12 text-center">
-            <small className="text-white">Note: Numbers might be delayed. We are working on a more robust analytics view and will post on our social outlets once this is live!</small>
+            <small className="text-white">Note: We are working on a more robust analytics view and will post on our social outlets once this is live!</small>
           </div>
         </div>
         </div>
