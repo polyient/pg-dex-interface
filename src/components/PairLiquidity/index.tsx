@@ -50,9 +50,6 @@ const getCurrentPrice = async function(eth_unit:any,pgt_unit:any){
    const response_pgt = await fetch('https://api.coingecko.com/api/v3/coins/ethereum/contract/0xeaccb6E0f24d66cF4Aa6cBDa33971b9231d332a1');
    const data_pgt =  await response_pgt.json();
 
-  //  const response_eth = await fetch('https://api.coingecko.com/api/v3/coins/ethereum/contract/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2');
-  //  const data_eth =  await response_eth.json();
-
    let pgt = {eth:data_pgt.market_data.current_price.eth,usd: data_pgt.market_data.current_price.usd}
    let eth = {pgt:(1.0/data_pgt.market_data.current_price.eth),usd: ((1.0/data_pgt.market_data.current_price.eth)*data_pgt.market_data.current_price.usd)}
 
@@ -85,11 +82,11 @@ export function PairLiquidity() {
         reserve1Units,
     }:any = await getPairInfo(library, getContract(pairAddress, IUniswapV2PairABI, library, account));
   view_data = await getCurrentPrice(reserve0Units,reserve1Units);
-  setTotalPrice(`${view_data.total.toFixed(2)}`);
+  setTotalPrice(`${new Intl.NumberFormat().format(view_data.total.toFixed(2))}`);
   setPgtEth(view_data.pgt.eth.toFixed(4));
-  setPgtUsd(`$${view_data.pgt.usd.toFixed(4)}`);
+  setPgtUsd(`$${view_data.pgt.usd.toFixed(2)}`);
   setEthPgt(view_data.eth.pgt.toFixed(4));
-  setEthUsd(`$${view_data.eth.usd.toFixed(4)}`);
+  setEthUsd(`$${view_data.eth.usd.toFixed(2)}`);
   }
   interval = setInterval(fn,40000);
   fn();
