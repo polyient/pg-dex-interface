@@ -113,8 +113,8 @@ export function PairLiquidity() {
             <small className="text-white">Note: We are working on a more robust analytics view and will post on our social outlets once this is live!</small>
           </div>
           <hr></hr>
-          <div className="col-lg-12">
-            <a className="text-decoration-none" href="https://etherscan.io/address/0xcebeca2f22080a7eb1c810e8a3ed42bbcff233c6" target="_blank"><button className="btn btn-pool btn-block mb-3">View on Etherscan.io</button></a>
+          <div className="col-lg-12 text-center">
+            <a className="text-decoration-none" href="https://etherscan.io/address/0xcebeca2f22080a7eb1c810e8a3ed42bbcff233c6" target="_blank"><small className="text-white">View Details on Etherscan.io</small></a>
           </div>
         </div>
         </div>
