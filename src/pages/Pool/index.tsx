@@ -21,6 +21,7 @@ import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks
 import AppBody from '../AppBody'
 import { Dots } from '../../components/swap/styleds'
 import { PairLiquidity } from '../../components/PairLiquidity'
+import { PairLiquidity2 } from '../../components/PairLiquidity2'
 
 export default function Pool() {
   const theme = useContext(ThemeContext)
@@ -61,6 +62,7 @@ export default function Pool() {
     <>
       <AppBody>
       <PairLiquidity/>
+      <PairLiquidity2/>
         <div className="row justify-content-center align-items-center h-100">
           <div className="col-md-5 mx-auto">
             <div className="dex-card p-4">

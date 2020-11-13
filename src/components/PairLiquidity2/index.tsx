@@ -29,7 +29,7 @@ const getPairInfo = async function(web3:any, pair:any){
       price1CumulativeLastPromise,
       kLastPromise,
   ]);
-  const reserve0Units = getReserves.reserve0.toString()/(10**18);
+  const reserve0Units = getReserves.reserve0.toString()/(10**6); // double check
   const reserve1Units = getReserves.reserve1.toString()/(10**18);
   return {
       token0Address: token0,
@@ -45,47 +45,42 @@ const getPairInfo = async function(web3:any, pair:any){
   };
 }  
 
+const getCurrentPrice = async function(eth_unit:any,usdc_unit:any){
+   const response_usdc = await fetch('https://api.coingecko.com/api/v3/coins/ethereum/contract/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48');
+   const data_usdc =  await response_usdc.json();
 
-const getCurrentPrice = async function(eth_unit:any,pgt_unit:any){
-   const response_pgt = await fetch('https://api.coingecko.com/api/v3/coins/ethereum/contract/0xeaccb6E0f24d66cF4Aa6cBDa33971b9231d332a1');
-   const data_pgt =  await response_pgt.json();
+   let usdc = {eth:data_usdc.market_data.current_price.eth,usd: data_usdc.market_data.current_price.usd}
+   let eth = {usdc:(1.0/data_usdc.market_data.current_price.eth),usd: ((1.0/data_usdc.market_data.current_price.eth)*data_usdc.market_data.current_price.usd)}
 
-   let pgt = {eth:data_pgt.market_data.current_price.eth,usd: data_pgt.market_data.current_price.usd}
-   let eth = {pgt:(1.0/data_pgt.market_data.current_price.eth),usd: ((1.0/data_pgt.market_data.current_price.eth)*data_pgt.market_data.current_price.usd)}
-
-   let total = eth_unit*eth.usd + pgt_unit*pgt.usd;
-   return {pgt,eth,total}
-   
+   let total = eth_unit*eth.usd + usdc_unit*usdc.usd;
+   return {usdc,eth,total}
 }
 
-
-export function PairLiquidity() {
+export function PairLiquidity2() {
   const { account, chainId, library} = useWeb3React()
   const [totalPrice, setTotalPrice] = useState<string>('')
-  const [pgtEth, setPgtEth] = useState<string>('')
-  const [pgtUsd, setPgtUsd] = useState<string>('')
-  const [ethPgt, setEthPgt] = useState<string>('')
+  const [usdcEth, setUsdcEth] = useState<string>('')
+  const [usdcUsd, setUsdcUsd] = useState<string>('')
+  const [ethUsdc, setEthUsdc] = useState<string>('')
   const [ethUsd, setEthUsd] = useState<string>('')
-
 
   let view_data:any = {}; 
   if (!chainId || !library || !account) return null
 
   if(interval!=null){
     clearInterval(interval);
-    // console.log("clearIntervalclearIntervalclearInterval");
   }
   let fn = async()=>{
-    const pairAddress = '0xcebEcA2F22080a7Eb1C810e8a3Ed42bbCfF233c6'; //PGT - ETH
+    const pairAddress = '0xdf97d3838b679897bd5be0fd090c3ee381c20479'; // usdc - eth
     const {
         reserve0Units,
         reserve1Units,
     }:any = await getPairInfo(library, getContract(pairAddress, IUniswapV2PairABI, library, account));
-  view_data = await getCurrentPrice(reserve0Units,reserve1Units);
+  view_data = await getCurrentPrice(reserve1Units,reserve0Units);
   setTotalPrice(`${new Intl.NumberFormat().format(view_data.total.toFixed(2))}`);
-  setPgtEth(view_data.pgt.eth.toFixed(4));
-  setPgtUsd(`$${view_data.pgt.usd.toFixed(2)}`);
-  setEthPgt(view_data.eth.pgt.toFixed(4));
+  setUsdcEth(view_data.usdc.eth.toFixed(4));
+  setUsdcUsd(`$${view_data.usdc.usd.toFixed(2)}`);
+  setEthUsdc(view_data.eth.usdc.toFixed(4));
   setEthUsd(`$${view_data.eth.usd.toFixed(2)}`);
   }
   interval = setInterval(fn,40000);
@@ -96,7 +91,7 @@ export function PairLiquidity() {
       <div className="row justify-content-center align-items-center h-100">
         <div className="col-md-5 mx-auto">
        <div className="dex-card p-4 mb-3">
-        <h1 className="text-left pt-1">PGT - ETH</h1>
+        <h1 className="text-left pt-1">USDC - ETH</h1>
         <div className="row">
           <div className="col-lg-6">
             <label className="text-dex-dark">Total Liquidity</label>
@@ -105,8 +100,8 @@ export function PairLiquidity() {
           <div className="col-lg-6">
             <label className="text-dex-dark">Last Price</label>
             <p className="text-white">
-              1 PGT = {pgtEth} ETH ({pgtUsd})<br/>
-              1 ETH = {ethPgt} PGT ({ethUsd})
+              1 USDC = {usdcEth} ETH ({usdcUsd})<br/>
+              1 ETH = {ethUsdc} USDC ({ethUsd})
             </p>
           </div>
           <div className="col-lg-12 text-center">
@@ -114,7 +109,7 @@ export function PairLiquidity() {
           </div>
           <hr></hr>
           <div className="col-lg-12 text-center">
-            <a className="text-decoration-none" href="https://etherscan.io/address/0xcebeca2f22080a7eb1c810e8a3ed42bbcff233c6" target="_blank"><small className="text-white">View Details on Etherscan.io</small></a>
+            <a className="text-decoration-none" href="https://etherscan.io/address/0xdf97d3838b679897bd5be0fd090c3ee381c20479" target="_blank"><small className="text-white">View Details on Etherscan.io</small></a>
           </div>
         </div>
         </div>
