@@ -61,8 +61,6 @@ export default function Pool() {
   return (
     <>
       <AppBody>
-      <PairLiquidity/>
-      <PairLiquidity2/>
         <div className="row justify-content-center align-items-center h-100">
           <div className="col-md-5 mx-auto">
             <div className="dex-card p-4">
@@ -149,6 +147,9 @@ export default function Pool() {
             </div>
           </div>
         </div>
+      <br />
+      <PairLiquidity/>
+      <PairLiquidity2/>
       </AppBody>
 
       <div className="d-none" style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}>
