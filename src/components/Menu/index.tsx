@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { PieChart,  MessageCircle } from 'react-feather'
+import { PieChart,  MessageCircle, Clipboard } from 'react-feather'
 import styled from 'styled-components'
 // import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
@@ -99,8 +99,12 @@ export default function Menu() {
       </div>
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://www.polyient.games/dashboard">
+          <MenuItem id="link" href="https://info.polyient.games">
             <PieChart size={14} />
+            Analytics
+          </MenuItem>
+          <MenuItem id="link" href="https://www.polyient.games/dashboard">
+            <Clipboard size={14} />
             Dashboard
           </MenuItem>
           <MenuItem id="link" href="https://discord.gg/fXgVxdp">
