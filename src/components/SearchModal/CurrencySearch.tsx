@@ -143,7 +143,7 @@ export function CurrencySearch({
       <PaddedColumn gap="14px">
         <RowBetween>
           <Text fontWeight={500} fontSize={16} className="text-center">
-            Select a token
+            Select a Token
             <QuestionHelper text="Find a token by searching for its name or symbol or by pasting its address below." />
           </Text>
           <CloseIcon onClick={onDismiss} />
@@ -201,7 +201,7 @@ export function CurrencySearch({
               <TYPE.main id="currency-search-selected-list-name">{selectedListInfo.current.name}</TYPE.main>
             </Row>
           ) : null}
-          <button onClick={onChangeList} id="currency-search-change-list-button" className="btn btn-sm btn-theme change-curr-btn">{selectedListInfo.current ? 'Change' : 'Select a list'}</button>
+          <button onClick={onChangeList} id="currency-search-change-list-button" className="btn btn-sm btn-theme change-curr-btn">{selectedListInfo.current ? 'Change' : 'Select a List'}</button>
         </RowBetween>
       </Card>
     </Column>
