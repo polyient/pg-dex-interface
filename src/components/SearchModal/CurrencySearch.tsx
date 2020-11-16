@@ -187,10 +187,11 @@ export function CurrencySearch({
       </div>
 
       
-      <Card>
-        <RowBetween className="border p-2" style={{ borderColor: '#A4A6A9', borderRadius: '4px', marginTop: isMobile ? '-4rem' : '0px' }}>
+      <Card  style={{ borderColor: '#A4A6A9', borderRadius: '4px', padding: isMobile ? '0 1.25rem 4rem 1.25rem' : '1.25rem' }}>
+        <RowBetween className="border p-2" style={{ borderColor: '#A4A6A9', borderRadius: '4px', marginTop: isMobile ? '-7rem' : '0px' , display: isMobile ? 'inline-block' : 'flex' }}>
           {selectedListInfo.current ? (
-            <Row>
+            <Row  style={{ justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex' }}>
               {selectedListInfo.current.logoURI ? (
                 <ListLogo
                   style={{ marginRight: 12 }}
@@ -199,9 +200,11 @@ export function CurrencySearch({
                 />
               ) : null}
               <TYPE.main id="currency-search-selected-list-name">{selectedListInfo.current.name}</TYPE.main>
+              </div>
+              <button onClick={onChangeList} id="currency-search-change-list-button" className="btn btn-sm btn-theme change-curr-btn">{selectedListInfo.current ? 'Change' : 'Select a List'}</button>
             </Row>
-          ) : null}
-          <button onClick={onChangeList} id="currency-search-change-list-button" className="btn btn-sm btn-theme change-curr-btn">{selectedListInfo.current ? 'Change' : 'Select a List'}</button>
+          ) :  <button onClick={onChangeList} id="currency-search-change-list-button" className="btn btn-sm btn-theme change-curr-btn">{selectedListInfo.current ? 'Change' : 'Select a List'}</button>}
+         
         </RowBetween>
       </Card>
     </Column>
