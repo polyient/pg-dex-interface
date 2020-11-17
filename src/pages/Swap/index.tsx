@@ -44,8 +44,9 @@ import { computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
 import AppBody from '../AppBody'
 import { ClickableText } from '../Pool/styleds'
 import Loader from '../../components/Loader'
-import { PairLiquidity } from '../../components/PairLiquidity'
-import { PairLiquidity2 } from '../../components/PairLiquidity2'
+// import { PairLiquidity } from '../../components/PairLiquidity'
+// import { PairLiquidity2 } from '../../components/PairLiquidity2'
+import { PoolParty } from '../../components/PoolParty'
 
 export default function Swap() {
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -279,6 +280,7 @@ export default function Swap() {
         onConfirm={handleConfirmTokenWarning}
       />
       <AppBody>
+      <PoolParty />
       <div className="row justify-content-center align-items-center h-100">
         <div className="col-md-5 mx-auto">
           <div className="dex-card p-4">
@@ -497,9 +499,6 @@ export default function Swap() {
         </div>
       </div>
       <br />
-      <PairLiquidity/>
-      <PairLiquidity2/>
-      
       </AppBody>
     </>
   )
