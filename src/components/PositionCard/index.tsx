@@ -13,13 +13,23 @@ import { useTokenBalance } from '../../state/wallet/hooks'
 import { currencyId } from '../../utils/currencyId'
 import { unwrappedToken } from '../../utils/wrappedCurrency'
 
-
+import { ExternalLink} from '../../theme'
 import Card, { GreyCard } from '../Card'
 import { AutoColumn } from '../Column'
 import CurrencyLogo from '../CurrencyLogo'
 import DoubleCurrencyLogo from '../DoubleLogo'
 import { RowBetween, RowFixed } from '../Row'
 import { Dots } from '../swap/styleds'
+
+const InfoLink = styled(ExternalLink)`
+  width: 100%;
+  border: 1px solid ${({ theme }) => theme.bg3};
+  padding: 6px 6px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: ${({ theme }) => theme.text1};
+`
 
 export const FixedHeightRow = styled(RowBetween)`
   height: 24px;
@@ -241,9 +251,18 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
             <Link to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}><button className="btn btn-pool">Add</button></Link>
             <Link to={`/remove/${currencyId(currency0)}/${currencyId(currency1)}`}><button className="btn btn-outline-pool ml-2">Remove</button></Link>
           </div>
+          <br />
+          <AutoColumn style={{ padding: '0 24px' }}>
+            <InfoLink
+              style={{ width: '100%', textAlign: 'center' }}
+              href={`https://info.polyient.games/account/${account}`}
+            >
+              View Fees and Analytics<span style={{ fontSize: '11px' }}>↗</span>
+            </InfoLink>
+          </AutoColumn>
           <div className="d-flexs justify-content-center d-none">
             <div className="my-4 w-75">
-              <a className="hr-sect content-12 text-dex-success" target="_blank" href={`https://uniswap.info/pair/${pair.liquidityToken.address}`}>View Pool Info ↗</a>
+              <a className="hr-sect content-12 text-dex-success" target="_blank" href={`https://info.polyient.games/pair/${pair.liquidityToken.address}`}>View Pool Info ↗</a>
             </div>
           </div>
         </div>
