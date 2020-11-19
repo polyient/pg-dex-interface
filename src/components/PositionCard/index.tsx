@@ -257,7 +257,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
               style={{ width: '100%', textAlign: 'center' }}
               href={`https://info.polyient.games/account/${account}`}
             >
-              View Fees and Analytics<span style={{ fontSize: '11px' }}>↗</span>
+              View Fees and Analytics<span style={{ fontSize: '11px' }}> ↗</span>
             </InfoLink>
           </AutoColumn>
           <div className="d-flexs justify-content-center d-none">
