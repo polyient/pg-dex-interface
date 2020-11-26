@@ -13,7 +13,7 @@ import listDark from '../../assets/images/token-list/lists-dark.png'
 export default function ListIntroduction({ onSelectList }: { onSelectList: () => void }) {
   const [isDark] = useDarkModeManager()
   
-  // // calling this function for direct open "Manage Lists" area
+  // calling this function for direct open "Manage Lists" area
   onSelectList();
   return (
     <Column style={{ width: '100%', flex: '1 1' }}>
@@ -30,7 +30,7 @@ export default function ListIntroduction({ onSelectList }: { onSelectList: () =>
             alt="token-list-preview"
           />
           <Text style={{ marginBottom: '8px', textAlign: 'center' }}>
-            Uniswap now supports token lists. You can add your own custom lists via IPFS, HTTPS and ENS.{' '}
+            PG DEX now supports token lists. You can add your own custom lists via IPFS, HTTPS and ENS.{' '}
           </Text>
           <ButtonPrimary onClick={onSelectList} id="list-introduction-choose-a-list">
             Choose a list

@@ -450,7 +450,6 @@ export default function AddLiquidity({
         </div>
       </div>
       </AppBody>
-
       
     </>
   )

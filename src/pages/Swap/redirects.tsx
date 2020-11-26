@@ -1,12 +1,12 @@
 import React from 'react'
 import { Redirect, RouteComponentProps } from 'react-router-dom'
 
-// Redirects to swap but only replace the pathname
+// redirects to swap but only replace the pathname
 export function RedirectPathToSwapOnly({ location }: RouteComponentProps) {
   return <Redirect to={{ ...location, pathname: '/swap' }} />
 }
 
-// Redirects from the /swap/:outputCurrency path to the /swap?outputCurrency=:outputCurrency format
+// redirects from the /swap/:outputCurrency path to the /swap?outputCurrency=:outputCurrency format
 export function RedirectToSwap(props: RouteComponentProps<{ outputCurrency: string }>) {
   const {
     location: { search },
