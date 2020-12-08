@@ -3,7 +3,6 @@ import flatMap from 'lodash.flatmap'
 import { useCallback, useMemo } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from '../../constants'
-
 import { useActiveWeb3React } from '../../hooks'
 import { useAllTokens } from '../../hooks/Tokens'
 import { AppDispatch, AppState } from '../index'
@@ -194,7 +193,12 @@ export function useTrackedTokenPairs(): [Token, Token][] {
                   if (base.address === token.address) {
                     return null
                   } else {
-                    return [base, token]
+                        // update for logo display issue
+                        if(typeof tokens[base.address] == "undefined"){
+                          return [base, token]
+                        }else{
+                          return [tokens[base.address], token]
+                        }
                   }
                 })
                 .filter((p): p is [Token, Token] => p !== null)
