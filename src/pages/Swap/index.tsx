@@ -45,7 +45,7 @@ import { ClickableText } from '../Pool/styleds'
 import Loader from '../../components/Loader'
 // import { PairLiquidity } from '../../components/PairLiquidity'
 // import { PairLiquidity2 } from '../../components/PairLiquidity2'
-import { PoolParty } from '../../components/PoolParty'
+import { PguAnnouncement } from '../../components/PguAnnouncement'
 
 export default function Swap() {
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -279,7 +279,7 @@ export default function Swap() {
         onConfirm={handleConfirmTokenWarning}
       />
       <AppBody>
-      <PoolParty />
+      <PguAnnouncement />
       <div className="row justify-content-center align-items-center h-100">
         <div className="col-md-5 mx-auto">
           <div className="dex-card p-4">
