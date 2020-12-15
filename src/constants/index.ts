@@ -21,6 +21,7 @@ export const MKR = new Token(ChainId.MAINNET, '0x9f8F72aA9304c8B593d555F12eF6589
 export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A5d5039A161', 9, 'AMPL', 'Ampleforth')
 // pg updates
 export const PGT = new Token(ChainId.MAINNET, '0xeaccb6E0f24d66cF4Aa6cBDa33971b9231d332a1', 18, 'PGT', 'Polyient Games Governance Token')
+export const PGU = new Token(ChainId.MAINNET, '0x98c36c0e953463bd5146c8783ce081ce1d187acf', 18, 'PGU', 'Polyient Games Unity Token')
 export const UNI = new Token(ChainId.MAINNET, '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984', 18, 'UNI', 'UNI')
 
 const WETH_ONLY: ChainTokenList = {
@@ -62,7 +63,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, PGT],
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, PGT, PGU],
   [ChainId.ROPSTEN]: [...WETH_ONLY[ChainId.ROPSTEN]],
   [ChainId.RINKEBY]: [...WETH_ONLY[ChainId.RINKEBY]],
 }
