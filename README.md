@@ -22,7 +22,7 @@ To access the Polyient Games DEX Interface, visit [dex.polyient.games](https://d
 
 Please see the
 [@polyient-games/token-list](https://www.polyient.games/hosted/tokens.json) 
-repository.
+JSON list.
 
 ## Development
 
@@ -38,7 +38,7 @@ yarn
 yarn start
 ```
 
-### Configuring the environment (optional)
+### Configuring the Environment (optional)
 
 To have the interface default to a different network when a wallet is not connected:
 
