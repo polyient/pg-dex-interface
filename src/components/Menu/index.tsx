@@ -103,7 +103,7 @@ export default function Menu() {
             <PieChart size={14} />
             Analytics
           </MenuItem>
-          <MenuItem id="link" href="https://www.polyient.games/dashboard">
+          <MenuItem id="link" href="https://app.polyient.games/">
             <Clipboard size={14} />
             Dashboard
           </MenuItem>
