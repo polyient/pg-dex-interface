@@ -24,7 +24,8 @@ import { Dots } from '../../components/swap/styleds'
 // import { PairLiquidity2 } from '../../components/PairLiquidity2'
 // import { PguAnnouncement } from '../../components/PguAnnouncement'
 // import { MaticAnnouncement } from '../../components/MaticAnnouncement'
-import { SlpAnnouncement } from '../../components/SlpAnnouncement'
+// import { SlpAnnouncement } from '../../components/SlpAnnouncement'
+import { GalaAnnouncement } from '../../components/GalaAnnouncement'
 
 export default function Pool() {
   const theme = useContext(ThemeContext)
@@ -64,7 +65,7 @@ export default function Pool() {
   return (
     <>
       <AppBody>
-        <SlpAnnouncement />
+        <GalaAnnouncement />
         <div className="row justify-content-center align-items-center h-100">
           <div className="col-md-5 mx-auto">
             <div className="dex-card p-4">
