@@ -22,6 +22,7 @@ import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
+import Hotjar from '../components/Hotjar/Hotjar'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -64,6 +65,7 @@ export default function App() {
       <HashRouter>
         <Route component={GoogleAnalyticsReporter} />
         <Route component={DarkModeQueryParamReader} />
+        <Route component={Hotjar} />
         <Header />
         
         <AppWrapper>
