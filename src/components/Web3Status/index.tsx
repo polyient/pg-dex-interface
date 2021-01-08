@@ -1,8 +1,6 @@
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
-// import { darken, lighten } from 'polished'
 import React, { useMemo } from 'react'
-// import { Activity } from 'react-feather'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import CoinbaseWalletIcon from '../../assets/images/coinbaseWalletIcon.svg'
@@ -17,13 +15,13 @@ import { useWalletModalToggle } from '../../state/application/hooks'
 import { isTransactionRecent, useAllTransactions } from '../../state/transactions/hooks'
 import { TransactionDetails } from '../../state/transactions/reducer'
 import { shortenAddress } from '../../utils'
-// import { ButtonSecondary } from '../Button'
 
 import Identicon from '../Identicon'
 import Loader from '../Loader'
 
 import { RowBetween } from '../Row'
 import WalletModal from '../WalletModal'
+import BrowserErrorModal from '../BrowserErrorModal'
 import { useETHBalances } from '../../state/wallet/hooks'
 
 
@@ -194,6 +192,7 @@ function Web3StatusInner() {
           <div className="input-group-append" onClick={toggleWalletModal}>
             <div className="input-group-append">
               <span className="input-group-text">
+                <BrowserErrorModal/>
               {!hasPendingTransactions && connector && <StatusIcon connector={connector} />}
                 {hasPendingTransactions ? (
                   <RowBetween>
@@ -218,6 +217,7 @@ function Web3StatusInner() {
         <div className="input-group-prepend">
           <span className="input-group-text" id="basic-addon1"><i className="fa fa-wifi" /></span>
         </div>
+        <BrowserErrorModal/>
         <span className="form-control custom-input">{error instanceof UnsupportedChainIdError ? 'Wrong Network' : 'Error'}</span>
         <div className="input-group-append">
           <button className="btn btn-theme" type="button" id="button-addon2" onClick={toggleWalletModal}>{t('Connect Wallet')}</button>
@@ -232,6 +232,7 @@ function Web3StatusInner() {
           <div className="input-group-prepend">
             <span className="input-group-text" id="basic-addon1"><i className="fa fa-wifi" /></span>
           </div>
+          <BrowserErrorModal/>
           <span className="form-control custom-input">Wallet Is Not Connected</span>
           <div className="input-group-append">
             <button className="btn btn-theme" type="button" id="button-addon2" onClick={toggleWalletModal}>{t('Connect Wallet')}</button>
