@@ -1,5 +1,5 @@
 //pg default token list lives here
-export const DEFAULT_TOKEN_LIST_URL = 'https://app.polyient.games/hosted/tokens.json?a=22'
+export const DEFAULT_TOKEN_LIST_URL = 'https://app.polyient.games/hosted/tokens.json?a=24'
 
 export const DEFAULT_LIST_OF_LISTS: string[] = [
   DEFAULT_TOKEN_LIST_URL,
