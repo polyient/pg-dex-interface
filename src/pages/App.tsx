@@ -5,6 +5,9 @@ import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsRepo
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Popups from '../components/Popups'
+
+import PolyientNetwork from '../components/PolyientNetwork'
+
 import Web3ReactManager from '../components/Web3ReactManager'
 import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
 import AddLiquidity from './AddLiquidity'
@@ -41,7 +44,7 @@ const BodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 160px;
+  padding-top: 100px;
   align-items: center;
   flex: 1;
   overflow-y: auto;
@@ -67,10 +70,12 @@ export default function App() {
         <Route component={DarkModeQueryParamReader} />
         <Route component={Hotjar} />
         <Header />
-        
+        <PolyientNetwork/>
         <AppWrapper>
           <BodyWrapper>
             <Popups />
+        
+
             <Web3ReactManager>
               <Switch>
                 <Route exact strict path="/swap" component={Swap} />
