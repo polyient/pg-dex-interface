@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Popups from '../components/Popups'
 
-import PolyientNetwork from '../components/PolyientNetwork'
+// import PolyientNetwork from '../components/PolyientNetwork'
 
 import Web3ReactManager from '../components/Web3ReactManager'
 import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
@@ -70,7 +70,6 @@ export default function App() {
         <Route component={DarkModeQueryParamReader} />
         <Route component={Hotjar} />
         <Header />
-        <PolyientNetwork/>
         <AppWrapper>
           <BodyWrapper>
             <Popups />
