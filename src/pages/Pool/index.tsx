@@ -27,6 +27,7 @@ import { Dots } from '../../components/swap/styleds'
 // import { SlpAnnouncement } from '../../components/SlpAnnouncement'
 // import { GalaAnnouncement } from '../../components/GalaAnnouncement'
 // import { SandAnnouncement } from '../../components/SandAnnouncement'
+import { DexSunsetNotice } from '../../components/DexSunsetNotice'
 import { Announcement } from '../../components/Announcement'
 
 export default function Pool() {
@@ -67,6 +68,7 @@ export default function Pool() {
   return (
     <>
       <AppBody>
+        <DexSunsetNotice />
         <Announcement />
         <div className="row justify-content-center align-items-center h-100">
           <div className="col-md-5 mx-auto">

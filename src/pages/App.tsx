@@ -70,6 +70,7 @@ export default function App() {
         <Route component={DarkModeQueryParamReader} />
         <Route component={Hotjar} />
         <Header />
+
         <AppWrapper>
           <BodyWrapper>
             <Popups />
