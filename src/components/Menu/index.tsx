@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { PieChart,  MessageCircle, Clipboard, Check, Map } from 'react-feather'
+import { PieChart,  MessageCircle, Check } from 'react-feather'
 import styled from 'styled-components'
 // import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
@@ -102,14 +102,6 @@ export default function Menu() {
           <MenuItem id="link" href="https://info.polyient.games">
             <PieChart size={14} />
             Analytics
-          </MenuItem>
-          <MenuItem id="link" href="https://bridge.polyient.games">
-            <Map size={14} />
-            Bridge
-          </MenuItem>
-          <MenuItem id="link" href="https://app.polyient.games/">
-            <Clipboard size={14} />
-            Dashboard
           </MenuItem>
           <MenuItem id="link" href="https://discord.gg/fXgVxdp">
             <MessageCircle size={14} />

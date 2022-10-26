@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="col-md-6">
                 <h4 style={{fontWeight: 'normal'}}>About Polyient Games</h4> 
                 <p className="footer_content">A division of <a href="https://www.polyient.io/" target="_blank">Polyient, Inc.</a>, Polyient Games  is the first open, chain-agnostic investment ecosystem focused on blockchain gaming. </p>
-                <a className="btn text-white btn-outline-info" href="https://app.polyient.games/contact" target="_blank"><i className="fa fa-envelope" /> Contact Us</a>
+                <a className="btn text-white btn-outline-info" href="https://www.polyient.games/" target="_blank"><i className="fa fa-envelope" /> Contact Us</a>
               </div>
               <div className="col-md-3">
                 <ul className="list-unstyled ml-4">

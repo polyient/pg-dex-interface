@@ -51,7 +51,7 @@ import Loader from '../../components/Loader'
 // import { GalaAnnouncement } from '../../components/GalaAnnouncement'
 // import { SandAnnouncement } from '../../components/SandAnnouncement'
 import { DexSunsetNotice } from '../../components/DexSunsetNotice'
-import { Announcement } from '../../components/Announcement'
+// import { Announcement } from '../../components/Announcement'
 
 
 export default function Swap() {
@@ -287,7 +287,6 @@ export default function Swap() {
       />
       <AppBody>
       <DexSunsetNotice />
-      <Announcement />
       <div className="row justify-content-center align-items-center h-100">
         <div className="col-md-5 mx-auto">
           <div className="dex-card p-4">
