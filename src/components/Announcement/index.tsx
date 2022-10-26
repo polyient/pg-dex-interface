@@ -10,12 +10,13 @@ const DetailsDiv = styled.div`
   `;
 
 export function Announcement() {
-  const [announcement,setAnnouncement] = useState('');
+  const [announcement] = useState('');
+  // const [announcement,setAnnouncement] = useState('');
   useEffect(()=>{
-     fetch('https://app.polyient.games/api/v1/dex_announcements').then(response => response.json())
-     .then(json =>{ 
-        setAnnouncement(json.data)
-     });
+    //  fetch('https://app.polyient.games/api/v1/dex_announcements').then(response => response.json())
+    //  .then(json =>{ 
+    //     setAnnouncement(json.data)
+    //  });
   },[])
 
   return (
